@@ -18,5 +18,7 @@ def main():
 
     monthly_payment = calculate_monthly_payment(principal, annual_interest_rate, years)
     print(f"The monthly payment for a loan of le{principal:.2f} with an annual interest rate of {annual_interest_rate}% over {years} years is: le{monthly_payment:.2f}")
-
+    
+if __name__ == "__main__":
+    main()
 
