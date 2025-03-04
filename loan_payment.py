@@ -12,12 +12,12 @@ def calculate_monthly_payment(principal, annual_interest_rate, years):
     return monthly_payment
 
 def main():
-    principal = float(input("Enter the loan amount (Principal): le"))
+    principal = float(input("Enter the loan amount (Principal): $"))
     annual_interest_rate = float(input("Enter the annual interest rate (in %): "))
     years = int(input("Enter the loan term in years: "))
 
     monthly_payment = calculate_monthly_payment(principal, annual_interest_rate, years)
-    print(f"The monthly payment for a loan of le{principal:.2f} with an annual interest rate of {annual_interest_rate}% over {years} years is: le{monthly_payment:.2f}")
+    print(f"The monthly payment for a loan of ${principal:.2f} with an annual interest rate of {annual_interest_rate}% over {years} years is: ${monthly_payment:.2f}")
     
 if __name__ == "__main__":
     main()
