@@ -1,23 +1,15 @@
-def savings_growth(initial_savings, monthly_deposit, annual_rate, years, comp_per_year=12):
-    r = annual_rate / 100  # Convert percentage to Decimal
-    n = comp_per_year  
-    t = years  # Total years
-
-    
-    FV_initial = initial_savings * (1 + r/n)**(n*t)
-    
-    
-    FV_deposits = monthly_deposit * (((1 + r/n)**(n*t) - 1) / (r/n))
-    
-  
-    total_FV = FV_initial + FV_deposits
-    return round(total_FV, 2)
+def cal_savings(initial, rate, years, contribution):
+    total = initial
+    for _ in range(years):
+        total += total * (rate / 100) 
+        total += contribution  
+    return total
 
 
-initial_savings = float(input("Enter initial savings: "))
-monthly_deposit = float(input("Enter monthly deposit: "))
-annual_rate = float(input("Enter annual interest rate (%): "))
-years = int(input("Enter number of years: "))
+initial = float(input("Please enter initial savings (Le): "))
+rate = float(input("Please enter interest rate (%): "))
+years = int(input("Please enter number of years: "))
+contribution = float(input("Please enter yearly contribution (Le): "))
 
-future_value = savings_growth(initial_savings, monthly_deposit, annual_rate, years)
-print(f"Future Value of Savings: Le{future_value}")
+final_amt = cal_savings(initial, rate, years, contribution)
+print(f"After {years} years, your savings will grow to: Le{final_amt:.2f}")
